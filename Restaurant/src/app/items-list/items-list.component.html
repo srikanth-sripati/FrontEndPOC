@@ -1,0 +1,32 @@
+<div class="card">
+  <!-- <div class="card-header">Header</div> -->
+  <div class="card bg-info text-white">
+    <div class="card-body text-center">
+        <div class="form-group">
+            <label> ItemId </label>
+            <input type="text" class="form-control" [(ngModel)]="item.itemId">
+            
+            <label> Item </label><br/>
+            <select name="items" class="custom-select-sm" [(ngModel)]="item.item" >
+              <option value="{{menuItem}}" *ngFor="let menuItem of menuList ">{{menuItem}}</option>
+            </select><br/>
+
+            <label> Ingredients </label>
+            <input type="text" class="form-control" [(ngModel)]="item.ingredients">
+            <label> Calories </label>
+            <input type="text" class="form-control" [(ngModel)]="item.calories">
+            <label> Price </label>
+            <input type="text" class="form-control" [(ngModel)]="item.price">
+            <label> Discount </label>
+            <input type="text" class="form-control" [(ngModel)]="item.discount">
+            <br/>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="customFile" [(ngModel)]="item.image">
+              <label class="custom-file-label" for="customFile">Choose Image</label>
+            </div>
+            <br/><br/><br/>
+            <button type="submit" (click)="onSubmitItem(item)">Submit</button>
+          </div>
+    </div> 
+  </div>
+</div>
