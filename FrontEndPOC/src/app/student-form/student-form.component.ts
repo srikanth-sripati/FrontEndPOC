@@ -9,16 +9,19 @@ import { StudentModel } from '../StudentModel';
 export class StudentFormComponent implements OnInit {
   student:StudentModel;
   studentList:StudentModel[];
- 
+
   constructor(private studentFormService:StudentFormService) {  
    }
 
   ngOnInit() {
  
   }
-  onSubmit()
+  onSubmitStudent(student:StudentModel)
   {
+    this.studentFormService.Student = student;
     this.studentList = this.studentFormService.getStudents();
+    console.log(this.studentList);
+    this.student = new StudentModel();
   }
 
 }

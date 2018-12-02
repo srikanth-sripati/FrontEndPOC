@@ -14,6 +14,7 @@ export class StudentFormService {
   getStudents():StudentModel[]
   {
     //http
+    this.StudentList.push(this.Student);
     return this.StudentList;
   }
 }

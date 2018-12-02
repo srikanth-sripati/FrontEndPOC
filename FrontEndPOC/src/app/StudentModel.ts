@@ -42,6 +42,4 @@ export class StudentModel{
     public set isPeps(value: boolean) {
         this._isPeps = value;
     }
-
-
 }

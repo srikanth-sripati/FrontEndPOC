@@ -1,3 +1,30 @@
-<p>
-  student-form works!
-</p>
+<div class="card">
+  <!-- <div class="card-header">Header</div> -->
+  <div class="card bg-info text-white">
+    <div class="card-body text-center">
+        <div class="form-group">
+            <label> Id </label>
+            <input type="text" class="form-control" [(ngModel)]="student.id">
+            
+            <label> Branch </label><br/>
+            <select name="items" class="custom-select-sm" [(ngModel)]="student.branch" >
+              <option value="{{menuItem}}" *ngFor="let menuItem of menuList ">{{menuItem}}</option>
+            </select><br/>
+
+            <label> Name </label>
+            <input type="text" class="form-control" [(ngModel)]="student.name">
+            <label> Calories </label>
+            <input type="checkbox" class="form-control" [(ngModel)]="student.premium_basics">
+            <label> Price </label>
+            <input type="radio" class="form-control" [(ngModel)]="student.isPeps">
+            <br/>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="customFile" [(ngModel)]="student.photo">
+              <label class="custom-file-label" for="customFile">Choose Image</label>
+            </div>
+            <br/><br/><br/>
+            <button type="submit" (click)="onSubmitStudent(student)">Submit</button>
+          </div>
+    </div> 
+  </div>
+</div>
