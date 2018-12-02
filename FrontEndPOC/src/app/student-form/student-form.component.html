@@ -13,8 +13,10 @@
 
             <label> Name </label>
             <input type="text" class="form-control" [(ngModel)]="student.name">
-            <label> Calories </label>
-            <input type="checkbox" class="form-control" [(ngModel)]="student.premium_basics">
+            
+            <label class="form-check-label">  </label>
+            <input type="checkbox" class="form-check-input" value="" [(ngModel)]="student.premium_basics">premium OR basics
+                      
             <label> Price </label>
             <input type="radio" class="form-control" [(ngModel)]="student.isPeps">
             <br/>

@@ -11,10 +11,11 @@ export class StudentFormComponent implements OnInit {
   studentList:StudentModel[];
 
   constructor(private studentFormService:StudentFormService) {  
-   }
+    
+  }
 
   ngOnInit() {
- 
+    this.student = new StudentModel();
   }
   onSubmitStudent(student:StudentModel)
   {
