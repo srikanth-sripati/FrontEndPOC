@@ -13,13 +13,22 @@
 
             <label> Name </label>
             <input type="text" class="form-control" [(ngModel)]="student.name">
+                   
+            <label class="form-check-label"> isPEPS </label>
+            <input type="checkbox" class="form-control" [(ngModel)]="student.isPeps">
             
-            <label class="form-check-label">  </label>
-            <input type="checkbox" class="form-check-input" value="" [(ngModel)]="student.premium_basics">premium OR basics
-                      
-            <label> Price </label>
-            <input type="radio" class="form-control" [(ngModel)]="student.isPeps">
+            <div class="form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optradio" [(ngModel)]="student.premium_basics" checked>Premium
+              </label>
+            </div>
+            <div class="form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optradio">Basics
+              </label>
+            </div>
             <br/>
+
             <div class="custom-file">
               <input type="file" class="custom-file-input" id="customFile" [(ngModel)]="student.photo">
               <label class="custom-file-label" for="customFile">Choose Image</label>
