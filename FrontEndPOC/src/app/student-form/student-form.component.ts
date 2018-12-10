@@ -16,13 +16,15 @@ export class StudentFormComponent implements OnInit {
 
   ngOnInit() {
     this.student = new StudentModel();
+    
   }
   onSubmitStudent(student:StudentModel)
   {
-    this.studentFormService.Student = student;
-    this.studentList = this.studentFormService.getStudents();
-    console.log(this.studentList);
-    this.student = new StudentModel();
+    console.log(this.studentFormService.getStudents);
+    //this.studentFormService.Student = student;
+    //this.studentList = this.studentFormService.getStudents();
+    //console.log(this.studentList);
+    //this.student = new StudentModel();
   }
 
 }

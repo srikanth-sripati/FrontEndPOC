@@ -21,11 +21,11 @@ export class StudentModel{
     public set branch(value: String) {
         this._branch = value;
     }
-    private _photo: ImageData;
-    public get photo(): ImageData {
+    private _photo: Number;
+    public get photo(): Number {
         return this._photo;
     }
-    public set photo(value: ImageData) {
+    public set photo(value: Number) {
         this._photo = value;
     }
     private _premium_basic: boolean;
