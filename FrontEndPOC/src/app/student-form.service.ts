@@ -12,7 +12,8 @@ export class StudentFormService {
   StudentList:StudentModel[]=[];
   private handleError;
   private studentUrl ='http://localhost:9090/students';
-  
+  private studentById ='http://localhost:9090/students/';
+  private deleteById ='http://localhost:9090/delete/';
   constructor(private http: HttpClient) { 
 
   }
@@ -20,9 +21,21 @@ export class StudentFormService {
   {
     //http
     //this.StudentList.push(this.Student);
-    return this.http.get<StudentModel[]>(this.studentUrl)
-    .pipe(
-      catchError(this.handleError('getStudents', []))
-    );
+    return this.http.get<StudentModel[]>(this.studentUrl);
+    // .pipe(
+    //   catchError(this.handleError('getStudents', []))
+    //);
   }
+  getStudentById(id: Number): Observable<StudentModel>
+  {
+    this.studentById = this.studentById + id; 
+    return this.http.get<StudentModel>(this.studentById);
+  }
+
+  deleteUsingId(id: Number): Observable<{}> 
+  {
+    this.deleteById = this.deleteById +id;
+    return this.http.delete(this.deleteById);    
+  }
+
 }
